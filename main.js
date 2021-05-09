@@ -12,10 +12,12 @@ const update = (msg, counter) => {
     if (msg==="+"){
         return counter+=1;
     }
-    else { return counter-=1;}
+    else if ( msg==="-") 
+    {return counter-=1}
+    else { return counter};
 }
 
 
 const input= "-"
-const c = 2
+const c = 10
 console.log(update(input,c));
