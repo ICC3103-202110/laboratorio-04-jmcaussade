@@ -1,4 +1,4 @@
-
+const prompt = require('prompt-sync')();
 const view= (counter) => {
     return ("\nCount " + counter + "\n\n" + " (+) " + " (-)" + "\n\n" + "(q) to quit\n "
     );
@@ -25,7 +25,7 @@ const app = (counter) => {
         const CurrentView = view(counter)
         console.clear();
         console.log(CurrentView);
-        const msg = "-" //AQUI GUARDAR INPUT USUARIO
+        const msg = prompt(); //AQUI GUARDAR INPUT USUARIO
         console.log(update(msg,counter));
 }
 
