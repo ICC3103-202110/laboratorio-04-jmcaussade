@@ -1,12 +1,10 @@
 
 const view= (counter) => {
-    return ("Count " + counter + "\n" + " (+) " + " (-)"
+    return ("\nCount " + counter + "\n\n" + " (+) " + " (-)" + "\n\n" + "(q) to quit\n "
     );
 }
 
-//console.log(view(3)); 
-
-
+console.log(view(3)); 
 
 const update = (msg, counter) => {
     if (msg==="+"){
@@ -17,7 +15,18 @@ const update = (msg, counter) => {
     else { return counter};
 }
 
+//const input= "-"
+//const c = 10
+//console.log(update(input,c));
+//if (msg==="q"){ break }
 
-const input= "-"
-const c = 10
-console.log(update(input,c));
+
+const app = (counter) => {
+        const CurrentView = view(counter)
+        console.clear();
+        console.log(CurrentView);
+        const msg = "-" //AQUI GUARDAR INPUT USUARIO
+        console.log(update(msg,counter));
+}
+
+app(0)
