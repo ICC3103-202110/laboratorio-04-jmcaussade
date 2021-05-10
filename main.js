@@ -12,7 +12,7 @@ const update = (msg, counter) => {
     }
     else if ( msg==='-') 
     {return counter-=1}
-    else { return "\nCounter= " + counter + "\n"};
+    else { return  counter };
 }
 
 //const input= "-"
@@ -22,15 +22,14 @@ const update = (msg, counter) => {
 
 
 
-const app = (counter) => {
-    var  msg = '0'
-    while (msg!='q') { 
-        const CurrentView = view(counter);
-        console.clear();
-        console.log(CurrentView);
-        msg = prompt();
-        console.log(update(msg,counter));
+const app = (counter) => { 
+    var msg = '0'
+    while ( msg!='q'){
+    const CurrentView = view(counter);
+    console.clear();
+    console.log(CurrentView);
+    msg = prompt();
+    counter= (update(msg,counter));
     }
-}
-
+} 
 app(0)
