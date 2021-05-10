@@ -28,7 +28,7 @@ const app = (counter) => {
     const CurrentView = view(counter);
     console.clear();
     console.log(CurrentView);
-    msg = prompt();
+    msg = prompt('What do you whant to do? ');
     counter= (update(msg,counter));
     }
 } 
