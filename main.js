@@ -1,18 +1,18 @@
 const prompt = require('prompt-sync')();
+
 const view= (counter) => {
     return ("\nCount " + counter + "\n\n" + " (+) " + " (-)" + "\n\n" + "(q) to quit\n "
     );
 }
-
-console.log(view(3)); 
+ 
 
 const update = (msg, counter) => {
-    if (msg==="+"){
+    if (msg==='+'){
         return counter+=1;
     }
-    else if ( msg==="-") 
+    else if ( msg==='-') 
     {return counter-=1}
-    else { return counter};
+    else { return "\nCounter= " + counter + "\n"};
 }
 
 //const input= "-"
@@ -21,12 +21,16 @@ const update = (msg, counter) => {
 //if (msg==="q"){ break }
 
 
+
 const app = (counter) => {
-        const CurrentView = view(counter)
+    var  msg = '0'
+    while (msg!='q') { 
+        const CurrentView = view(counter);
         console.clear();
         console.log(CurrentView);
-        const msg = prompt(); //AQUI GUARDAR INPUT USUARIO
+        msg = prompt();
         console.log(update(msg,counter));
+    }
 }
 
 app(0)
